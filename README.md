@@ -31,7 +31,7 @@ user_rule 是用户和权限规则的关联表
 ```json
 {
     "require": {
-        "yurunsoft/yurun-auth": "1.0.*"
+        "yurunsoft/yurun-auth": "dev-master"
     }
 }
 ```
