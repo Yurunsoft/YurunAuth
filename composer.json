@@ -1,0 +1,15 @@
+{
+    "name": "yurunsoft/yurun-auth",
+    "description": "基于YurunPHP框架的权限控制类",
+	"type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Yurun\\Auth\\": "src/"
+        }
+    },
+    "require": {
+        "yurunsoft/yurun-php" : "dev-dev",
+        "yurunsoft/yurun-event": "dev-master"
+    }
+}

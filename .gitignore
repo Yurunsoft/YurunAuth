@@ -1,0 +1,6 @@
+/src/vendor
+/src/composer.lock
+/vendor
+/composer.lock
+/test/Logs/*.log
+/.vscode/settings.json
