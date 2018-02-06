@@ -10,6 +10,6 @@
     },
     "require": {
         "yurunsoft/yurun-php" : "dev-dev",
-        "yurunsoft/yurun-event": "dev-master"
+        "yurunsoft/yurun-event": "1.*"
     }
 }
