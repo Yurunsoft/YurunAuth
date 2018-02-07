@@ -81,14 +81,14 @@ class User
 	 * @param int $format 查询出来的列表格式，ListFormat::XXX
 	 * @return array
 	 */
-	public function selectRoles($format = ListFormat::LIST)
+	public function selectRoles($format = ListFormat::LIST_ARRAY)
 	{
 		$this->error = '';
 		$arr1 = $this->userRoleModel->selectUserRoles($this->userID);
 		$this->roles = \Yurun\Auth\Helper::parseArrayFieldToKey($arr1, 'id');
 		switch($format)
 		{
-			case ListFormat::LIST:
+			case ListFormat::LIST_ARRAY:
 				return $arr1;
 				break;
 			case ListFormat::TREE:
@@ -126,7 +126,7 @@ class User
 	 * @param int $format 查询出来的列表格式，ListFormat::XXX
 	 * @return array
 	 */
-	public function selectRules($format = ListFormat::LIST)
+	public function selectRules($format = ListFormat::LIST_ARRAY)
 	{
 		$this->error = '';
 		$arr1 = \Yurun\Auth\Helper::uniqueArray(array_merge(
@@ -136,7 +136,7 @@ class User
 		$this->rules = \Yurun\Auth\Helper::parseArrayFieldToKey($arr1, 'id');
 		switch($format)
 		{
-			case ListFormat::LIST:
+			case ListFormat::LIST_ARRAY:
 				return $arr1;
 				break;
 			case ListFormat::TREE:

@@ -10,7 +10,7 @@ class ListFormat
 	/**
 	 * 数组列表
 	 */
-	const LIST = 1;
+	const LIST_ARRAY = 1;
 
 	/**
 	 * 树形结构

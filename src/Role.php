@@ -81,13 +81,13 @@ class Role
 	 * @param int $format 查询出来的列表格式，ListFormat::XXX
 	 * @return array
 	 */
-	public function selectRules($format = ListFormat::LIST)
+	public function selectRules($format = ListFormat::LIST_ARRAY)
 	{
 		$this->error = '';
 		$arr1 = $this->roleRuleModel->selectRoleRules($this->roleID);
 		switch($format)
 		{
-			case ListFormat::LIST:
+			case ListFormat::LIST_ARRAY:
 				return $arr1;
 				break;
 			case ListFormat::TREE:
