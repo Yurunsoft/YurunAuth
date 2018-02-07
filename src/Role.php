@@ -184,7 +184,7 @@ class Role
 					'roleID'	=>	$this->roleID,
 					'operation'	=>	'delete',
 				]);
-			｝
+			}
 			$this->error = '';
 			return true;
 		}
