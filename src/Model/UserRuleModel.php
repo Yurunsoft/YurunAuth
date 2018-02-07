@@ -15,6 +15,10 @@ class UserRuleModel extends BaseModel
 		{
 			$userID = [$userID];
 		}
+		if(!isset($userID[0]))
+		{
+			return [];
+		}
 		return $this->field('rule.*')
 					->join('', $this->tableName('rule') . ' as rule', $this->tableName() . '.rule_id=rule.id')
 					->where(array('user_id'=>array('in', $userID)))

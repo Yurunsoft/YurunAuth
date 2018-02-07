@@ -15,6 +15,10 @@ class RoleRuleModel extends BaseModel
 		{
 			$roleID = [$roleID];
 		}
+		if(!isset($roleID[0]))
+		{
+			return [];
+		}
 		return $this->field('rule.*')
 					->join('', $this->tableName('rule') . ' as rule', $this->tableName() . '.rule_id=rule.id')
 					->where(array('role_id'=>array('in', $roleID)))

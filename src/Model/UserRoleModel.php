@@ -15,6 +15,10 @@ class UserRoleModel extends BaseModel
 		{
 			$userID = [$userID];
 		}
+		if(!isset($userID[0]))
+		{
+			return [];
+		}
 		return $this->field('role.*')
 					->join('', $this->tableName('role') . ' as role', $this->tableName() . '.role_id=role.id')
 					->where(array('user_id'=>array('in', $userID)))
