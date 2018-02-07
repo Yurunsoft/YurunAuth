@@ -37,10 +37,22 @@ class User
 	public $error;
 
 	/**
-	 * 当前用户的权限
+	 * 当前用户的所有权限
 	 * @var array
 	 */
 	public $rules;
+
+	/**
+	 * 当前用户的角色所拥有的权限
+	 * @var array
+	 */
+	public $roleRules;
+
+	/**
+	 * 单独赋予用户的权限
+	 * @var array
+	 */
+	public $userRules;
 
 	/**
 	 * 当前用户的角色
@@ -129,9 +141,11 @@ class User
 	public function selectRules($format = ListFormat::LIST_ARRAY)
 	{
 		$this->error = '';
+		$this->roleRules = $this->roleRuleModel->selectRoleRules(array_column($this->selectRoles(), 'id'));
+		$this->userRules = $this->userRuleModel->selectUserRules($this->userID);
 		$arr1 = \Yurun\Auth\Helper::uniqueArray(array_merge(
-			$this->userRuleModel->selectUserRules($this->userID),
-			$this->roleRuleModel->selectRoleRules(array_column($this->selectRoles(), 'id'))
+			$this->roleRules,
+			$this->userRules
 		));
 		$this->rules = \Yurun\Auth\Helper::parseArrayFieldToKey($arr1, 'id');
 		switch($format)
