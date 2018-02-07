@@ -242,7 +242,7 @@ class User
 		if($this->userRoleModel->where(array(
 			'user_id'	=>	$this->userID,
 			'role_id'	=>	$roleID,
-		))->delete(null, \Db::RETURN_ROW) > 0)
+		))->delete(null, \Db::RETURN_ROWS) > 0)
 		{
 			$this->selectRoles();
 			$this->selectRules();
