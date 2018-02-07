@@ -329,7 +329,7 @@ class User
 		$this->noEvents = true;
 		$oldRoleIDs = $this->userRoleModel->where(array('user_id'=>$this->userID))->field('role_id')->selectColumn('role_id');
 		$addRoleIDs = array_diff($roleIDs, $oldRoleIDs);
-		foreach($addRuleIDs as $roleID)
+		foreach($addRoleIDs as $roleID)
 		{
 			if(!$this->addRole($roleID))
 			{
